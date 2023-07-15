@@ -1,0 +1,15 @@
+version: 2
+enable-beta-ecosystems: true
+updates:
+  - package-ecosystem: pub
+    directory: "/packages/desktop_wallpaper"
+    schedule:
+      interval: weekly
+  - package-ecosystem: pub
+    directory: "/packages/desktop_wallpaper/example"
+    schedule:
+      interval: weekly
+  - package-ecosystem: cargo
+    directory: "/packages/desktop_wallpaper/native"
+    schedule:
+      interval: weekly
