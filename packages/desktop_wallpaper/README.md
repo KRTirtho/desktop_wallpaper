@@ -18,7 +18,7 @@ This template uses the following structure:
 * `lib`: Contains the Dart code that defines the API of the plugin, and which
   calls into the native code using `dart:ffi`.
 
-* platform folders (`android`, `ios`, `windows`, etc.): Contains the build files
+* platform folders (`macos`, `linux`, `windows`, etc.): Contains the build files
   for building and bundling the native code library with the platform application.
 
 ## Buidling and bundling native code
@@ -59,10 +59,7 @@ A plugin can have both FFI and method channels:
 
 The native build systems that are invoked by FFI (and method channel) plugins are:
 
-* For Android: Gradle, which invokes the Android NDK for native builds.
-  * See the documentation in android/build.gradle.
-* For iOS and MacOS: Xcode, via CocoaPods.
-  * See the documentation in ios/desktop_wallpaper.podspec.
+* For MacOS: Xcode, via CocoaPods.
   * See the documentation in macos/desktop_wallpaper.podspec.
 * For Linux and Windows: CMake.
   * See the documentation in linux/CMakeLists.txt.

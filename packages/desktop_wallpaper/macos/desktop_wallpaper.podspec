@@ -25,13 +25,12 @@ Pod::Spec.new do |spec|
   spec.license       = { :file => '../LICENSE' }
   spec.homepage      = 'https://github.com/KRTirtho/desktop_wallpaper'
   spec.authors       = { 'K R Tirtho' => 'krtirtho@gmail.com' }
-  spec.summary       = 'iOS/macOS Flutter bindings for desktop_wallpaper'
+  spec.summary       = 'macOS Flutter bindings for desktop_wallpaper'
 
   spec.source              = { :path => '.' }
   spec.source_files        = 'Classes/**/*'
   spec.public_header_files = 'Classes/**/*.h'
   spec.vendored_frameworks = "Frameworks/#{framework_name}"
 
-  spec.ios.deployment_target = '11.0'
   spec.osx.deployment_target = '10.11'
 end

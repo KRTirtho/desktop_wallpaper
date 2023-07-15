@@ -23,16 +23,12 @@ scripts:
     run: bash scripts/version.sh
 
   build:
-    run: melos run build:apple && melos run build:android && melos run build:other
+    run: melos run build:apple && melos run build:other
     description: Build all native libraries for the project.
 
   build:apple:
     run: bash scripts/build-apple.sh
-    description: Build the XCFramework for iOS and macOS.
-
-  build:android:
-    run: bash scripts/build-android.sh
-    description: Build the .tar.gz for Android.
+    description: Build the XCFramework for macOS.
 
   build:other:
     run: bash scripts/build-other.sh
@@ -50,14 +46,6 @@ scripts:
     run: |
       CURR_VERSION=v`awk '/^version: /{print $2}' packages/desktop_wallpaper/pubspec.yaml`
       cp platform-build/MetadataGod.xcframework.zip packages/desktop_wallpaper/macos/Frameworks/$CURR_VERSION.zip
-  copylib:ios:
-    run: |
-      CURR_VERSION=v`awk '/^version: /{print $2}' packages/desktop_wallpaper/pubspec.yaml`
-      cp platform-build/MetadataGod.xcframework.zip packages/desktop_wallpaper/ios/Frameworks/$CURR_VERSION.zip
-  copylib:android:
-    run: |
-      CURR_VERSION=v`awk '/^version: /{print $2}' packages/desktop_wallpaper/pubspec.yaml`
-      cp platform-build/android.tar.gz packages/desktop_wallpaper/android/$CURR_VERSION.tar.gz
 
   test:
     run: melos exec -c 1 --fail-fast -- "flutter test test"

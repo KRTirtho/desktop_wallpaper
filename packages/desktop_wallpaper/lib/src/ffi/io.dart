@@ -11,7 +11,7 @@ DesktopWallpaper createWrapperImpl(ExternalLibrary dylib) =>
 DynamicLibrary createLibraryImpl() {
   const base = 'desktop_wallpaper';
 
-  if (Platform.isIOS || Platform.isMacOS) {
+  if (Platform.isMacOS) {
     return DynamicLibrary.executable();
   } else if (Platform.isWindows) {
     return DynamicLibrary.open('$base.dll');
