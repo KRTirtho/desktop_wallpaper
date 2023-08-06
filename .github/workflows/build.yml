@@ -2,9 +2,7 @@ name: Build & Test
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
+
 jobs:
   # General build, check, and test steps
   build_and_test:
