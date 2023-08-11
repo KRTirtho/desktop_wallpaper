@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURR_VERSION=desktop_wallpaper-v`awk '/^version: /{print $2}' packages/desktop_wallpaper/pubspec.yaml`
+CURR_VERSION=v`awk '/^version: /{print $2}' packages/desktop_wallpaper/pubspec.yaml`
 
 # macOS
 APPLE_HEADER="release_tag_name = '$CURR_VERSION' # generated; do not edit"
